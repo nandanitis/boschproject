@@ -68,7 +68,7 @@ django-allauth==0.35.0
 git+https://github.com/FlavioAlexander/azure-sdk-for-python.git@legacy
 
 # Required when PostgreSQL is used
-psycopg2==2.8.3
+psycopg2==2.9.6
 
 # Lock unwanted people out on staging servers
 django-pin-passcode==0.1.9
