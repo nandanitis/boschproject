@@ -22,12 +22,11 @@ services:
         max-size: "200k"
     container_name: nginx
 
-
   # --------------------------------------------------------------------------
   # Database
   # --------------------------------------------------------------------------
   postgres:
-    image: postgres:9.6.3
+    image: postgres:13
     environment:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USER}
@@ -43,6 +42,13 @@ services:
         max-size: "200k"
     container_name: postgres
 
+  pgadmin:
+    image : dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=nandansh777@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    ports:
+      - "5050:80"
 
   # --------------------------------------------------------------------------
   # Message queue
@@ -97,7 +103,6 @@ services:
         max-size: "200k"
     container_name: flower
 
-
   # --------------------------------------------------------------------------
   # Cache
   # --------------------------------------------------------------------------
@@ -109,7 +114,6 @@ services:
       options:
         max-size: "200k"
     container_name: memcached
-
 
   # --------------------------------------------------------------------------
   # Django
@@ -140,7 +144,6 @@ services:
       options:
         max-size: "200k"
     container_name: django
-    
 
   # --------------------------------------------------------------------------
   # Celery Workers
@@ -166,7 +169,7 @@ services:
       options:
         max-size: "200k"
     container_name: worker_site
-      
+
   worker_compute:
     image: codalab/competitions-v1-compute-worker:1.1.7
     privileged: true
