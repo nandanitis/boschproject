@@ -37,7 +37,7 @@ six==1.10.0
 SQLAlchemy==0.9.7
 watchdog==0.8.1
 #wsgiref==0.1.2
-django-simple-captcha==0.5.12
+django-simple-captcha==0.5.18
 django-bootstrap-form==3.4
 newrelic==2.54.0.41
 pylibmc==1.5.2
